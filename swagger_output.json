@@ -1,0 +1,194 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "0.0.1",
+    "title": "Kings League API",
+    "description": "API for Kings League"
+  },
+  "host": "localhost:3001",
+  "basePath": "/",
+  "schemes": [
+    "http",
+    "https"
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/clasificaciones": {
+      "get": {
+        "description": "",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/jugadores": {
+      "get": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "equipo",
+            "in": "query",
+            "type": "string"
+          },
+          {
+            "name": "jugador",
+            "in": "query",
+            "type": "string"
+          },
+          {
+            "name": "mvp",
+            "in": "query",
+            "type": "string"
+          },
+          {
+            "name": "order_by",
+            "in": "query",
+            "type": "string"
+          },
+          {
+            "name": "order",
+            "in": "query",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/equipos/{teamName}": {
+      "get": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "teamName",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "enum": ["saiyans", "kunisports", "los_troncos", "ultimate_móstoles", "porcinos", "el_barrio", "rayo_bcn", "xbuyer_team", "aniquiladores", "jijantes", "pio_fc", "1kfc"]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/equipos/{teamName}/jugadores": {
+      "get": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "teamName",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "enum": ["saiyans", "kunisports", "los_troncos", "ultimate_móstoles", "porcinos", "el_barrio", "rayo_bcn", "xbuyer_team", "aniquiladores", "jijantes", "pio_fc", "1kfc"]
+          },
+          {
+            "name": "order_by",
+            "in": "query",
+            "type": "string"
+          },
+          {
+            "name": "order",
+            "in": "query",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/equipos/{teamName}/ranking_goleadores": {
+      "get": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "teamName",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "enum": ["saiyans", "kunisports", "los_troncos", "ultimate_móstoles", "porcinos", "el_barrio", "rayo_bcn", "xbuyer_team", "aniquiladores", "jijantes", "pio_fc", "1kfc"]
+          },
+          {
+            "name": "order_by",
+            "in": "query",
+            "type": "string"
+          },
+          {
+            "name": "order",
+            "in": "query",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/equipos/{teamName}/ranking_asistencias": {
+      "get": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "teamName",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "enum": ["saiyans", "kunisports", "los_troncos", "ultimate_móstoles", "porcinos", "el_barrio", "rayo_bcn", "xbuyer_team", "aniquiladores", "jijantes", "pio_fc", "1kfc"]
+          },
+          {
+            "name": "order_by",
+            "in": "query",
+            "type": "string"
+          },
+          {
+            "name": "order",
+            "in": "query",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    }
+  }
+}
